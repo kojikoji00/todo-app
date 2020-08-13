@@ -1,0 +1,61 @@
+@import 'variables';
+@import 'form';
+@import 'header';
+@import 'board';
+@import 'buttons';
+
+ html {
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  background-color: $base-bg-color;
+  font-size: 1em;
+  color: $text-base-color;
+}
+
+.container {
+  padding: 16px 16px;
+  width: 100%;
+}
+
+.board_title {
+  position: absolute;
+  width: 56px;
+  height: 25px;
+  left: 30px;
+  top: 17px;
+
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.board_title_line {
+  position: absolute;
+  width: 1920px;
+  height: 1px;
+  left: 0px;
+  top: 58px;
+
+  background: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.1;
+}
