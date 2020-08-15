@@ -1,0 +1,79 @@
+@import './variables';
+$heart-size: 16px;
+$avatar-size: 32px;
+
+.card {
+  position: absolute;
+  background-color: white;
+  width: 90%;
+  height: 161px;
+  left: 30px;
+  top: 161px;
+  margin: 10px 22px 0 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-right: 22px;
+  display: flex;
+
+  &_title {
+    margin-top: -50px;
+    position: absolute;
+    height: 25px;
+    width: 300px;
+    left: 5%;
+    top: 5%;
+    right: 76.79%;
+    top: calc(50% - 25px/2 - 12.5px);
+    font-size: 20px;
+    line-height: 25px;
+    margin-left: 10px;
+    color: #000000;
+  }
+
+  &_content {
+    width: 300px;
+    position: absolute;
+    height: 20px;
+    left: 5%;
+    right: 0%;
+    // top: calc(50% - 19px/2 + 15.5px);
+    font-size: 15px;
+    line-height: 19px;
+    mix-blend-mode: normal;
+    opacity: 0.4;
+    margin-top: 50px;
+    margin-left: 10px;
+    color: #000000;
+  }
+
+  &_detail {
+    position: absolute;
+    cursor: pointer;
+    margin-top: 20px;
+    display: flex;
+    font-size: 10px;
+    margin-left: 760px;
+
+    &_image {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      left: 30px;
+      top: 70px;
+      border-radius: 100%;
+    }
+  }
+
+  &_avatar_image {
+    background: #000000;
+
+    img {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      margin-top: 100px;
+      margin-left: 10px;
+    }
+  }
+}
