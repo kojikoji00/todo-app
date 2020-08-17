@@ -1,8 +1,10 @@
 .container
-  %h2.board-top All Boards
+  %h2.board_top All Boards
   %div
     - @boards.each do |board|
       = render 'commons/board', board: board
+
+.container
   = link_to new_board_path do
     .card_add
-      %p.card_add_board + Add new board
+    %h2.card_add_board  + Add new board

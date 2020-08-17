@@ -1,79 +1,52 @@
 @import './variables';
-$heart-size: 16px;
 $avatar-size: 32px;
+$container-padding: 16px;
 
 .card {
-  position: absolute;
   background-color: white;
-  width: 90%;
-  height: 161px;
-  left: 30px;
-  top: 161px;
-  margin: 10px 22px 0 30px;
+  height: 150px;
+  margin: 16px 16px;
   cursor: pointer;
-  border-radius: 10px;
-  margin-left: 30px;
-  margin-right: 22px;
-  display: flex;
-
-  &_title {
-    margin-top: -50px;
-    position: absolute;
-    height: 25px;
-    width: 300px;
-    left: 5%;
-    top: 5%;
-    right: 76.79%;
-    top: calc(50% - 25px/2 - 12.5px);
-    font-size: 20px;
-    line-height: 25px;
-    margin-left: 10px;
-    color: #000000;
-  }
-
-  &_content {
-    width: 300px;
-    position: absolute;
-    height: 20px;
-    left: 5%;
-    right: 0%;
-    // top: calc(50% - 19px/2 + 15.5px);
-    font-size: 15px;
-    line-height: 19px;
-    mix-blend-mode: normal;
-    opacity: 0.4;
-    margin-top: 50px;
-    margin-left: 10px;
-    color: #000000;
-  }
+  padding: $container-padding $container-padding;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 
   &_detail {
-    position: absolute;
+    padding-top: 10px;
     cursor: pointer;
-    margin-top: 20px;
     display: flex;
-    font-size: 10px;
-    margin-left: 760px;
+    font-size: 12px;
 
-    &_image {
+    &_title {
+      font-size: 24px;
+    }
+
+    &_content {
+      font-size: 20px;
+    }
+
+    &_actions {
+      right: 20px;
       position: absolute;
-      width: 6px;
-      height: 6px;
-      left: 30px;
-      top: 70px;
+    }
+
+    img {
+      cursor: pointer;
+      width: $avatar-size;
+      height: $avatar-size;
       border-radius: 100%;
+      margin-right: 16px;
+      margin-top: 10px;
     }
   }
 
-  &_avatar_image {
-    background: #000000;
+  &_add {
+    margin-top: 100px;
+    display: flex;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 
-    img {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      margin-top: 100px;
-      margin-left: 10px;
+    h2 {
+      margin-left: 16px
     }
   }
 }
