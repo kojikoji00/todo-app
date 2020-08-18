@@ -1,5 +1,8 @@
 %h1 Brankets
 .board
+  - if @task.eyecatch.attached?
+    .board_image
+      = image_tag @task.eyecatch
   .board_detail
     .board_detail_title
       %p= @board.title
