@@ -16,8 +16,15 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    board = current_user.boards.find(params[:id])
+    task = board.task
+    task.destroy!
+    redirect_to board_path(board), notice: '削除に成功しました'
+  end
+
   private
   def task_params
-    params.require(:task).permit(:content)
+    params.require(:task).permit(:name, :content, :eyecatch)
   end
 end
