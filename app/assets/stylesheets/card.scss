@@ -5,7 +5,7 @@ $heart-size: 32px;
 
 .card {
   background-color: white;
-  height: 150px;
+  height: auto;
   margin: 16px 16px;
   cursor: pointer;
   padding: $container-padding $container-padding;
@@ -35,10 +35,11 @@ $heart-size: 32px;
 
     &_title {
       font-size: 24px;
+      font-weight: bold;
     }
 
     &_content {
-      font-size: 20px;
+      font-size: 16px;
       
       img {
         cursor: pointer;

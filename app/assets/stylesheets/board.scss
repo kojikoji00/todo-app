@@ -7,7 +7,7 @@ h1 {
 
 .board {
   background-color: #F4F4F4;
-  height: 185px;
+  height: auto;
   margin: 16px 16px;
   cursor: pointer;
   padding: $container-padding $container-padding;
@@ -63,10 +63,11 @@ h1 {
 
     &_title {
       font-size: 24px;
+      font-weight: bold;
     }
 
     &_content {
-      font-size: 20px;
+      font-size: 16px;
     }
 
     &_actions {

@@ -1,14 +1,14 @@
 %h1 Brankets
 .board
-  - if @task.eyecatch.attached?
+  - if @tasks.eyecatch.attached?
     .board_image
-      = image_tag @task.eyecatch
+      = image_tag @tasks.eyecatch
   .board_detail
     .board_detail_title
       %p= @board.title
-      .board_detail_content
-        %p= @board.content
-        = image_tag 'default-avatar.png'
+    .board_detail_content
+      %p= @board.content
+      = image_tag 'default-avatar.png'
 
     - if user_signed_in? && current_user.has_written?(@board)
       .board_detail_actions
