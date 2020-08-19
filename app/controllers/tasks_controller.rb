@@ -4,7 +4,7 @@ class TasksController < ApplicationController
     board = Board.find(params[:board_id])
     @task = board.tasks.build
   end
-
+  
   def create
     board = Board.find(params[:board_id])
     @task = board.tasks.build(task_params)
