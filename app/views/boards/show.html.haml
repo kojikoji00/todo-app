@@ -1,21 +1,7 @@
 %h1 Brankets
-.board
+= link_to board_path(@board) do
   - @tasks.each do |task|
-    - if task.eyecatch.attached?
-      .board_image
-        = image_tag task.eyecatch
-    .board_detail
-      - if user_signed_in? && current_user.has_written?(task)
-        .board_detail_actions
-          .dropdown
-            = image_tag 'actions.svg', class: 'dropbtn'
-            .dropdown-content.mini
-              = link_to '編集する', edit_task_path(task)
-              = link_to '削除する', board_path(task) , data: { method: 'delete', confirm: '本当に削除してもよろしいですか' }
-    .board_task_name
-      %p= task.name
-    .board_task_content
-      %p= task.content
+    = render 'commons/task', task: task
 
 .container
   = link_to new_board_task_path(@board) do
