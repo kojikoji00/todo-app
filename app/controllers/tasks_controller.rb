@@ -16,6 +16,10 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    @task = current_user.task.find(params[:id])
+  end
+
   def destroy
     board = current_user.boards.find(params[:id])
     task = board.task
