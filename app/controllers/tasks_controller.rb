@@ -1,4 +1,10 @@
 class TasksController < ApplicationController
+  before_action :set_task, only: [:show]
+  before_action :authenticate_user!, only: [:show, :new, :create, :destroy ]
+
+  def show
+    @comments = @task.comments
+  end
 
   def new
     board = Board.find(params[:board_id])
@@ -30,5 +36,9 @@ class TasksController < ApplicationController
   private
   def task_params
     params.require(:task).permit(:name, :content, :eyecatch)
+  end
+
+  def set_task
+    @task = Task.find(params[:id])
   end
 end
