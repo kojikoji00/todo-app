@@ -1,15 +1,17 @@
-.board
-  .board_detail_name
-    %p= task.name
-  - if task.eyecatch.attached?
-    .board_detail_image
-      = image_tag task.eyecatch
-    .board_detail_content
-      %p= task.content
-    - if user_signed_in? && current_user.has_written?(task)
-      .board_detail_actions
-        .dropdown
-          = image_tag 'actions.svg', class: 'dropbtn'
-          .dropdown-content.mini
-            = link_to '編集する', edit_task_path(task)
-            = link_to '削除する', board_path(task) , data: { method: 'delete', confirm: '本当に削除してもよろしいですか' }
+= link_to board_task_path(task) do
+  .board
+    .board_detail_name
+      %p= task.name
+    - if task.eyecatch.attached?
+      .board_detail_image
+        = image_tag task.eyecatch
+      .board_detail_content
+        %p= task.content
+      - if user_signed_in? && current_user.has_written?(task)
+        .board_detail_actions
+          .dropdown
+            = image_tag 'actions.svg', class: 'dropbtn'
+            .dropdown-content.mini
+              = link_to '編集する', edit_board_path(task)
+              = link_to '削除する', board_path(task) , data: { method: 'delete', confirm: '本当に削除してもよろしいですか' }
+
