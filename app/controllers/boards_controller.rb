@@ -6,18 +6,19 @@ class BoardsController < ApplicationController
     @boards = Board.all
   end
 
-  def show
-    @tasks = @board.tasks
-  end
-
+  
   def new
     @board = current_user.boards.build
+  end
+  
+  def show
+    @tasks = @board.tasks
   end
 
   def create
     @board = current_user.boards.build(board_params)
     if @board.save
-      redirect_to root_path, notice: '保存しました'
+      redirect_to boards_path, notice: '保存しました'
     else
       flash.now[:error] = '保存に失敗しました'
       render :new
