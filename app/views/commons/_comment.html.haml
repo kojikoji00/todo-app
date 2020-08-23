@@ -1,0 +1,13 @@
+.container
+  .task_image
+    = image_tag @board.user.avatar_image
+  .task_content
+    = comment.content
+  .task_detail
+    - if user_signed_in? && current_user.has_written?(@task)
+      .task_detail_actions
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to '編集する', edit_task_comment_path(task_id: @task.id, id: @comment.id)
+            = link_to '削除する', task_comment_path(task_id: @task.id, id: @comment.id) , data: { method: 'delete', confirm: '本当に削除してもよろしいですか' }
