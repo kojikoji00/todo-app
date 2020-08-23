@@ -2,14 +2,21 @@
 -# = link_to board_path(@board) do
 -#   - @tasks.each do |task|
 -#     = render 'commons/task', task: task
+.container
+  .task_name
+    = @task.name
+  - if @task.eyecatch.attached?
+    .task_eyecatch
+      = image_tag @task.eyecatch
+  .task_content
+    = @task.content
 
 .container
-  %h1 Comment
+  %h1  Comment
   - @comments.each do |comment|
-    =comment.content
-    -# = render 'commons/comment', comment: comment
+    = render 'commons/comment', comment: comment
 
 .container
   = link_to new_task_comment_path(@task) do
-    .btn-secondary
-      コメントを追加
+    .add_new
+      %h2 + Add new comment
