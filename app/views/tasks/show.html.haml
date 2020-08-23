@@ -6,10 +6,10 @@
 .container
   %h1 Comment
   - @comments.each do |comment|
-    %p= comment.content
+    =comment.content
     -# = render 'commons/comment', comment: comment
 
 .container
-  = link_to new_board_comment_path(@task) do
+  = link_to new_task_comment_path(@task) do
     .btn-secondary
       コメントを追加

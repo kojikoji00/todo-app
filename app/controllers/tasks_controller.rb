@@ -1,15 +1,11 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show]
-  before_action :authenticate_user!, only: [:show, :new, :create, :destroy ]
-
-  def show
-    @comments = @task.comments
-  end
+  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
 
   def new
     board = Board.find(params[:board_id])
     @task = board.tasks.build
   end
+
   
   def create
     board = Board.find(params[:board_id])
@@ -21,14 +17,19 @@ class TasksController < ApplicationController
       render :new
     end
   end
+  
+  def show
+    @board = Board.find(params[:board_id])
+    @task = @board.tasks.find(params[:id])
+    @comments = @task.comments
+  end
 
   def edit
-    @task = current_user.task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
   end
 
   def destroy
-    board = current_user.boards.find(params[:id])
-    task = board.task
+    task = current_user.tasks.find(params[:id])
     task.destroy!
     redirect_to board_path(board), notice: '削除に成功しました'
   end
@@ -36,9 +37,5 @@ class TasksController < ApplicationController
   private
   def task_params
     params.require(:task).permit(:name, :content, :eyecatch)
-  end
-
-  def set_task
-    @task = Task.find(params[:id])
   end
 end

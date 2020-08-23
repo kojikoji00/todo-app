@@ -3,7 +3,7 @@
     - comment.errors.full_messages.each do |message|
       %li= message
       -# フォームのエラーメッセージ表示
-  = form_with(model: @comment, url: board_comments_path, method: 'post', local: true) do |f|
+  = form_with(model: @comment, url: task_comments_path(@task), method: 'post', local: true) do |f|
     %div
       = f.label :content, '内容'
     %div
