@@ -1,9 +1,9 @@
 %h1 Brankets
-= link_to board_path(@board) do
+= link_to task_path(@tasks) do
   - @tasks.each do |task|
     = render 'commons/task', task: task
 
 .container
-  = link_to new_board_task_path(@board) do
+  = link_to new_task_path do
     .add_new
       %h2 + Add new card
