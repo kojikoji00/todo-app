@@ -13,7 +13,7 @@ class User < ApplicationRecord
   end
 
   def has_written2?(task)
-    boards.exists?(id: task.id)
+    tasks.exists?(id: task.id)
   end
   
   def prepare_profile

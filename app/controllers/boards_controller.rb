@@ -6,13 +6,12 @@ class BoardsController < ApplicationController
     @boards = Board.all
   end
 
-  
   def show
     @tasks = @board.tasks
   end
 
   def new
-    @board = current_useroa.boards.build
+    @board = current_user.boards.build
   end
 
   def create
@@ -53,5 +52,4 @@ class BoardsController < ApplicationController
   def set_board
     @board = Board.find(params[:id])
   end
-
 end
