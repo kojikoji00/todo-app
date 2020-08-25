@@ -5,7 +5,7 @@
         %p= board.title
         .card_detail_content
           %p= board.content
-          = image_tag 'default-avatar.png'
+          = image_tag board.user.avatar_image
 
       - if user_signed_in? && current_user.has_written?(board)
         .card_detail_actions
