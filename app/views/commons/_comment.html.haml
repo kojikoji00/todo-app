@@ -4,7 +4,7 @@
   .task_content
     = comment.content
   .task_detail
-    - if user_signed_in? && current_user.has_written?(@task)
+    - if user_signed_in? && current_user.has_written2?(@task)
       .task_detail_actions
         .dropdown
           = image_tag 'actions.svg', class: 'dropbtn'

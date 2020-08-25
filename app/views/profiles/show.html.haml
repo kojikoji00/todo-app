@@ -1,0 +1,8 @@
+.container.profilePage
+  .profile_image
+    = image_tag current_user.avatar_image
+
+    .profile_name
+      = current_user.display_name
+    .profile_edit
+      = link_to 'Edit', edit_profile_path

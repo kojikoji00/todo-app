@@ -3,11 +3,11 @@
     .board_detail_name
       %p= task.name
     - if task.eyecatch.attached?
-      .board_detail_image
+      .eyecatch
         = image_tag task.eyecatch
       .board_detail_content
         %p= task.content
-      - if user_signed_in? && current_user.has_written?(task)
+      - if user_signed_in? && current_user.has_written2?(task)
         .board_detail_actions
           .dropdown
             = image_tag 'actions.svg', class: 'dropbtn'
