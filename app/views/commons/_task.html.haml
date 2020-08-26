@@ -7,7 +7,7 @@
         = image_tag task.eyecatch
       .board_detail_content
         %p= task.content
-      - if user_signed_in? && current_user.has_written2?(task)
+      - if user_signed_in? && current_user.has_written?(@board)
         .board_detail_actions
           .dropdown
             = image_tag 'actions.svg', class: 'dropbtn'
