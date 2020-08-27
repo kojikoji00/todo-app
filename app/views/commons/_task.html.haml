@@ -1,4 +1,4 @@
-= link_to task_path(task) do
+= link_to task_path(board_id: @board.id, id: task.id) do
   .board
     .board_detail_name
       %p= task.name
@@ -14,4 +14,3 @@
             .dropdown-content.mini
               = link_to '編集する', edit_task_path(task)
               = link_to '削除する', task_path(task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか' }
-
