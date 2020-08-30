@@ -11,7 +11,7 @@ class User < ApplicationRecord
   def has_written?(board)
     boards.exists?(id: board.id)
   end
-  
+
   def prepare_profile
     profile || build_profile
   end
@@ -20,7 +20,6 @@ class User < ApplicationRecord
     profile&.nickname || '名無し'
     # nicknameがnilじゃない時にprofileが実行される
   end
-
 
   def avatar_image
     if profile&.avatar&.attached?

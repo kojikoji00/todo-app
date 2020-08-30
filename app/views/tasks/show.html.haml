@@ -12,11 +12,11 @@
     = @task.content
 
 .container
-  %h1  Comment
+  %h1 Comment
   - @comments.each do |comment|
     = render 'commons/comment', comment: comment
 
 .container
-  = link_to new_task_comment_path(@task) do
+  = link_to new_task_comment_path(@comments) do
     .add_new
       %h2 + Add new comment

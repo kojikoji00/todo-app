@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resource :profile, only: [:show, :edit, :update]
+  resource :profile, only: %i[show edit update]
 end
